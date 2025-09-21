@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xin lỗi em</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 34px;
+      color: #ff4b5c;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin: 40px auto;
+      max-width: 1400px;
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: all 1s ease;
+    }
+
+    .container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 140px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+    }
+
+    .letter {
+      flex: 1;
+      max-width: 550px;
+      background: #fff;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      text-align: justify;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .heart {
+      font-size: 55px;
+      color: red;
+      animation: beat 1s infinite;
+      text-align: center;
+      margin: 18px 0;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .choices {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .choices button {
+      background: #ff4b5c;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      font-size: 17px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 6px;
+      transition: 0.3s;
+    }
+    .choices button:hover {
+      background: #ff758c;
+    }
+
+    /* Phong bì */
+    .envelope {
+      margin: 20px auto;
+      width: 160px;
+      height: 110px;
+      background: #ff4b5c;
+      position: relative;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    }
+    .envelope:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 55px solid #ff758c;
+    }
+    .envelope:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-top: 55px solid #ff758c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Anh Huy có đôi lời muốn gửi gắm đến em bé Giang</h1>
+
+  <!-- Phong bì -->
+  <div class="envelope" onclick="openLetter()"></div>
+
+  <div class="container" id="letterBox">
+    <!-- Cột ảnh bên trái -->
+    <div class="gallery">
+      <img src="g1.jfif">
+      <img src="g2.jfif">
+      <img src="g3.jfif">
+      <img src="g4.jfif">
+      <img src="g5.jfif">
+      <img src="g6.jfif">
+    </div>
+
+    <!-- Lá thư chính giữa -->
+    <div class="letter">
+      <p>
+        Anh biết dạo này anh vô tình làm em buồn nhiều lần rồi, và chỉ nói lời xin lỗi thôi thì chưa đủ. 
+        Khoảng cách xa khiến anh khó làm được nhiều điều cho em, nhưng anh vẫn muốn chứng minh bằng hành động lắm chứ. 
+        Anh muốn gặp ôm, ôm em lắm, muốn được bên em nhiều hơn nữa và nói lời xin lỗi trực tiếp với em. 
+        Nên tối thứ 3 anh sẽ ra với em nhé.
+      </p>
+      <p>
+        Anh hiểu trong một mối quan hệ khó tránh khỏi cãi vã, giận dỗi. Nhưng vì anh trân trọng và thương em, 
+        quan trọng là anh không muốn đánh mất em lúc này, nên anh luôn muốn giải quyết những lỗi lầm của mình, dù vô tình hay cố ý.
+      </p>
+      <p>
+        Anh biết anh chưa hoàn hảo, chưa thật sự trưởng thành, đôi khi vô ý và không nghĩ thấu đáo. 
+        Anh đang từng ngày cố gắng hoàn thiện bản thân, nhưng vẫn có những sai lầm cần em nhắc nhở để anh thay đổi để trở thành 1 phiên bản tốt hơn, xứng đáng với em hơn. 
+        Nên anh mong em cho anh thêm thời gian để chứng minh rằng anh có thể làm tốt hơn nha Giang.
+      </p>
+      <p><b>Em tha thứ cho anh nhé, thương em bé Giang ❤️</b></p>
+
+      <div class="heart">💖</div>
+
+      <div class="choices">
+        <p><b>Em có tha thứ cho anh Huy không?</b></p>
+        <button onclick="accept()">Có</button>
+        <button id="noBtn" onmouseover="moveNo()">Không</button>
+      </div>
+    </div>
+
+    <!-- Cột ảnh bên phải -->
+    <div class="gallery">
+      <img src="g7.jfif">
+      <img src="g8.jfif">
+      <img src="g9.jfif">
+      <img src="g10.jfif">
+      <img src="g11.jfif">
+      <img src="g12.jfif">
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.querySelector(".envelope").style.display = "none";
+      document.getElementById("letterBox").classList.add("show");
+    }
+
+    function accept() {
+      alert("Anh cảm ơn em nhiều lắm 💕 Anh hứa sẽ làm em cười nhiều hơn! Thương và ôm em bé thật chặt <3");
+    }
+
+    function moveNo() {
+      let btn = document.getElementById("noBtn");
+      let x = Math.floor(Math.random() * 200) - 100;
+      let y = Math.floor(Math.random() * 150) - 75;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
